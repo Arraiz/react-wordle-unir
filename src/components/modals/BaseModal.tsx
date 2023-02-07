@@ -58,6 +58,12 @@ export const BaseModal = ({ title, children, isOpen, handleClose }: Props) => {
                   <div className="mt-2">{children}</div>
                 </div>
               </div>
+                <div className="text-center text-lg font-medium leading-6 text-gray-900 dark:text-gray-100">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
+                sunt enim vel ut nostrum eius minus, sit eum tempora architecto
+                ea cum, facere debitis consectetur. Nihil, reprehenderit.
+                Expedita, illo quis?
+              </div>
             </div>
           </Transition.Child>
         </div>
