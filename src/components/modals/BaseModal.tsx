@@ -59,10 +59,7 @@ export const BaseModal = ({ title, children, isOpen, handleClose }: Props) => {
                 </div>
               </div>
                 <div className="text-center text-lg font-medium leading-6 text-gray-900 dark:text-gray-100">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-                sunt enim vel ut nostrum eius minus, sit eum tempora architecto
-                ea cum, facere debitis consectetur. Nihil, reprehenderit.
-                Expedita, illo quis?
+                un router es un dispositivo que es capaz de conectar redes en LANs diferentes
               </div>
             </div>
           </Transition.Child>
