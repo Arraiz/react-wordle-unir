@@ -58,9 +58,6 @@ export const BaseModal = ({ title, children, isOpen, handleClose }: Props) => {
                   <div className="mt-2">{children}</div>
                 </div>
               </div>
-                <div className="text-center text-lg font-medium leading-6 text-gray-900 dark:text-gray-100">
-                un router es un dispositivo que es capaz de conectar redes en LANs diferentes
-              </div>
             </div>
           </Transition.Child>
         </div>
