@@ -142,6 +142,13 @@ export const StatsModal = ({
           <MigrationIntro handleMigrateStatsButton={handleMigrateStatsButton} />
         </div>
       )}
+        <div className="mt-1 ml-1 text-left text-sm text-gray-900 dark:text-gray-100 sm:text-base">
+        Router: Dispositivo capaz de conectar elementos a nivdel de red
+        <td></td>
+        <a href="https://es.wikipedia.org/wiki/Router" rel="noreferrer">
+          Mas información
+        </a>
+      </div>
     </BaseModal>
   )
 }
