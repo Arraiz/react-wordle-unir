@@ -58,14 +58,14 @@ export const BaseModal = ({ title, children, isOpen, handleClose }: Props) => {
                   <div className="mt-2">{children}</div>
                 </div>
               </div>
-            </div>
-             <div className=text-center text-lg font-medium leading-6 text-gray-900 dark:text-gray-100>
+                <div className=text-center text-lg font-medium leading-6 text-gray-900 dark:text-gray-100>
                 Un rúter, ​ enrutador​ o encaminador​ es 
                 un dispositivo que permite interconectar redes con distinto
                 prefijo en su dirección IP. Su función es la de establecer la 
                 mejor ruta que destinará a cada paquete de datos para llegar 
                 a la red y al dispositivo de destino.
               </div>
+            </div>
           </Transition.Child>
         </div>
       </Dialog>
