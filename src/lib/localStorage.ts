@@ -16,18 +16,13 @@ export const saveGameStateToLocalStorage = (
   localStorage.setItem(key, JSON.stringify(gameState))
 }
 
-// export const loadGameStateFromLocalStorage = (isLatestGame: boolean) => {
-//   const key = isLatestGame ? gameStateKey : archiveGameStateKey
-//   const state = localStorage.getItem(key)
-//   return state ? (JSON.parse(state) as StoredGameState) : null
-// }
 export const loadGameStateFromLocalStorage = (isLatestGame: boolean) => {
   const key = isLatestGame ? gameStateKey : archiveGameStateKey
   const state = localStorage.getItem(key)
-  return  null
+  return state ? (JSON.parse(state) as StoredGameState) : null
 }
 
-//const gameStatKey = 'gameStats'
+const gameStatKey = 'gameStats'
 
 export type GameStats = {
   winDistribution: number[]
@@ -38,23 +33,13 @@ export type GameStats = {
   successRate: number
 }
 
-// export const saveStatsToLocalStorage = (gameStats: GameStats) => {
-//   localStorage.setItem(gameStatKey, JSON.stringify(gameStats))
-// }
-
 export const saveStatsToLocalStorage = (gameStats: GameStats) => {
-  return null
-  //localStorage.setItem(gameStatKey, JSON.stringify(gameStats))
+  localStorage.setItem(gameStatKey, JSON.stringify(gameStats))
 }
-// export const loadStatsFromLocalStorage = () => {
-//   const stats = localStorage.getItem(gameStatKey)
-//   return stats ? (JSON.parse(stats) as GameStats) : null
-// }
-//MD not storage anithing
+
 export const loadStatsFromLocalStorage = () => {
-  //const stats = null
-  return null
-  //return stats ? (JSON.parse(stats) as GameStats) : null
+  const stats = localStorage.getItem(gameStatKey)
+  return stats ? (JSON.parse(stats) as GameStats) : null
 }
 
 export const setStoredIsHighContrastMode = (isHighContrast: boolean) => {
