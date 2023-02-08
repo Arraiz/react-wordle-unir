@@ -9,13 +9,14 @@ export type StoredGameState = {
 }
 
 
-export const saveGameStateToLocalStorage = (
-  isLatestGame: boolean,
-  gameState: StoredGameState
-) => {
-  //const key = isLatestGame ? gameStateKey : archiveGameStateKey
-  //localStorage.setItem(key, JSON.stringify(gameState))
-}
+// export const saveGameStateToLocalStorage = (
+//   isLatestGame: boolean,
+//   gameState: StoredGameState
+// ) => {
+//   null
+//   //const key = isLatestGame ? gameStateKey : archiveGameStateKey
+//   //localStorage.setItem(key, JSON.stringify(gameState))
+// }
 
 export const loadGameStateFromLocalStorage = (isLatestGame: boolean) => {
   //const key = isLatestGame ? gameStateKey : archiveGameStateKey
