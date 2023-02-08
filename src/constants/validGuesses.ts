@@ -8543,7 +8543,7 @@ export const VALID_GUESSES=[
 'suyas',
 'suyo',
 'suyos',
-'t√∫',
+'switch',
 'tabaco',
 'tabla',
 'tablas',
