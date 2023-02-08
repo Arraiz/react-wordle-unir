@@ -1,4 +1,4 @@
-export const GAME_TITLE = "WORDLE TELECO"
+export const GAME_TITLE = process.env.REACT_APP_LOCALE_STRING
 
 export const WIN_MESSAGES = ['Great Job!', 'Awesome', 'Well done!']
 export const GAME_COPIED_MESSAGE = 'Game copied to clipboard'
