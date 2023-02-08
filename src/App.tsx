@@ -79,29 +79,29 @@ function App() {
       ? true
       : false
   )
-  const [isHighContrastMode, setIsHighContrastMode] = useState(
-    getStoredIsHighContrastMode()
-  )
+  // const [isHighContrastMode, setIsHighContrastMode] = useState(
+  //   getStoredIsHighContrastMode()
+  // )
   const [isRevealing, setIsRevealing] = useState(false)
   const [guesses, setGuesses] = useState<string[]>(() => {
-    const loaded = loadGameStateFromLocalStorage(isLatestGame)
-    if (loaded?.solution !== solution) {
-      return []
-    }
-    const gameWasWon = loaded.guesses.includes(solution)
-    if (gameWasWon) {
-      setIsGameWon(true)
-    }
-    if (loaded.guesses.length === MAX_CHALLENGES && !gameWasWon) {
-      setIsGameLost(true)
-      showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
-        persist: true,
-      })
-    }
-    return loaded.guesses
-  })
+    // const loaded = loadGameStateFromLocalStorage(isLatestGame)
+    // if (loaded?.solution !== solution) {
+    //   return []
+    // }
+  //   const gameWasWon = loaded.guesses.includes(solution)
+  //   if (gameWasWon) {
+  //     setIsGameWon(true)
+  //   }
+  //   if (loaded.guesses.length === MAX_CHALLENGES && !gameWasWon) {
+  //     setIsGameLost(true)
+  //     showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
+  //       persist: true,
+  //     })
+  //   }
+  //   return loaded.guesses
+  // })
 
-  const [stats, setStats] = useState(() => loadStats())
+  //const [stats, setStats] = useState(() => loadStats())
 
   const [isHardMode, setIsHardMode] = useState(
     localStorage.getItem('gameMode')
@@ -112,11 +112,11 @@ function App() {
   useEffect(() => {
     // if no game state on load,
     // show the user the how-to info modal
-    if (!loadGameStateFromLocalStorage(true)) {
-      setTimeout(() => {
-        setIsInfoModalOpen(true)
-      }, WELCOME_INFO_MODAL_MS)
-    }
+    // if (!loadGameStateFromLocalStorage(true)) {
+    //   setTimeout(() => {
+    //     setIsInfoModalOpen(true)
+    //   }, WELCOME_INFO_MODAL_MS)
+    // }
   })
 
   useEffect(() => {
@@ -135,12 +135,12 @@ function App() {
       document.documentElement.classList.remove('dark')
     }
 
-    if (isHighContrastMode) {
-      document.documentElement.classList.add('high-contrast')
-    } else {
-      document.documentElement.classList.remove('high-contrast')
-    }
-  }, [isDarkMode, isHighContrastMode])
+  //   if (isHighContrastMode) {
+  //     document.documentElement.classList.add('high-contrast')
+  //   } else {
+  //     document.documentElement.classList.remove('high-contrast')
+  //   }
+  // }, [isDarkMode, isHighContrastMode])
 
   const handleDarkMode = (isDark: boolean) => {
     setIsDarkMode(isDark)
@@ -156,18 +156,18 @@ function App() {
     }
   }
 
-  const handleHighContrastMode = (isHighContrast: boolean) => {
-    setIsHighContrastMode(isHighContrast)
-    setStoredIsHighContrastMode(isHighContrast)
-  }
+  // const handleHighContrastMode = (isHighContrast: boolean) => {
+  //   setIsHighContrastMode(isHighContrast)
+  //   setStoredIsHighContrastMode(isHighContrast)
+  // }
 
   const clearCurrentRowClass = () => {
     setCurrentRowClass('')
   }
 
-  useEffect(() => {
-    saveGameStateToLocalStorage(getIsLatestGame(), { guesses, solution })
-  }, [guesses])
+  // useEffect(() => {
+  //   saveGameStateToLocalStorage(getIsLatestGame(), { guesses, solution })
+  // }, [guesses])
 
   useEffect(() => {
     if (isGameWon) {
@@ -251,23 +251,23 @@ function App() {
       setGuesses([...guesses, currentGuess])
       setCurrentGuess('')
 
-      if (winningWord) {
-        if (isLatestGame) {
-          setStats(addStatsForCompletedGame(stats, guesses.length))
-        }
-        return setIsGameWon(true)
-      }
+      // if (winningWord) {
+      //   if (isLatestGame) {
+      //     setStats(addStatsForCompletedGame(stats, guesses.length))
+      //   }
+      //   return setIsGameWon(true)
+      // }
 
       if (guesses.length === MAX_CHALLENGES - 1) {
-        if (isLatestGame) {
-          setStats(addStatsForCompletedGame(stats, guesses.length + 1))
-        }
-        setIsGameLost(true)
-        showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
-          persist: true,
-          delayMs: REVEAL_TIME_MS * solution.length + 1,
-        })
-      }
+      //   if (isLatestGame) {
+      //     setStats(addStatsForCompletedGame(stats, guesses.length + 1))
+      //   }
+      //   setIsGameLost(true)
+      //   showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
+      //     persist: true,
+      //     delayMs: REVEAL_TIME_MS * solution.length + 1,
+      //   })
+      // }
     }
   }
 
