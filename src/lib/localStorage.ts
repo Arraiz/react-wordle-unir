@@ -1,4 +1,4 @@
-/*
+
 const gameStateKey = 'gameState'
 const archiveGameStateKey = 'archiveGameState'
 const highContrastKey = 'highContrast'
@@ -37,9 +37,15 @@ export const saveStatsToLocalStorage = (gameStats: GameStats) => {
   localStorage.setItem(gameStatKey, JSON.stringify(gameStats))
 }
 
+// export const loadStatsFromLocalStorage = () => {
+//   const stats = localStorage.getItem(gameStatKey)
+//   return stats ? (JSON.parse(stats) as GameStats) : null
+// }
+//MD not storage anithing
 export const loadStatsFromLocalStorage = () => {
-  const stats = localStorage.getItem(gameStatKey)
-  return stats ? (JSON.parse(stats) as GameStats) : null
+  const stats = null
+  return null
+  //return stats ? (JSON.parse(stats) as GameStats) : null
 }
 
 export const setStoredIsHighContrastMode = (isHighContrast: boolean) => {
@@ -54,4 +60,3 @@ export const getStoredIsHighContrastMode = () => {
   const highContrast = localStorage.getItem(highContrastKey)
   return highContrast === '1'
 }
-*/

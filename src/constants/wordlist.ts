@@ -1,3 +1,4 @@
 export const WORDS = [
- 'router'
+ 'router',
+ 'switch',
 ]
