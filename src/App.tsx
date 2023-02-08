@@ -39,7 +39,7 @@ import {
   //getStoredIsHighContrastMode,
   //loadGameStateFromLocalStorage,
   //saveGameStateToLocalStorage,
-  setStoredIsHighContrastMode,
+  //setStoredIsHighContrastMode,
 } from './lib/localStorage'
 import { addStatsForCompletedGame, loadStats } from './lib/stats'
 import {
