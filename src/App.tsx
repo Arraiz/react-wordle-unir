@@ -36,9 +36,9 @@ import {
 import { useAlert } from './context/AlertContext'
 import { isInAppBrowser } from './lib/browser'
 import {
-  getStoredIsHighContrastMode,
-  loadGameStateFromLocalStorage,
-  saveGameStateToLocalStorage,
+  //getStoredIsHighContrastMode,
+  //loadGameStateFromLocalStorage,
+  //saveGameStateToLocalStorage,
   setStoredIsHighContrastMode,
 } from './lib/localStorage'
 import { addStatsForCompletedGame, loadStats } from './lib/stats'
