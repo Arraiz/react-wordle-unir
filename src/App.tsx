@@ -41,7 +41,7 @@ import {
   //saveGameStateToLocalStorage,
   //setStoredIsHighContrastMode,
 } from './lib/localStorage'
-import { addStatsForCompletedGame, loadStats } from './lib/stats'
+//import { addStatsForCompletedGame, loadStats } from './lib/stats'
 import {
   findFirstUnusedReveal,
   getGameDate,
