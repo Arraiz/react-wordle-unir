@@ -1,8 +1,11 @@
 
-const gameStateKey = 'gameStateS'
-const archiveGameStateKey = 'archiveGameStateS'
-const highContrastKey = 'highContrast'
+// const gameStateKey = 'gameState'
+// const archiveGameStateKey = 'archiveGameState'
+// const highContrastKey = 'highContrast'
 
+const gameStateKey = "test"
+const archiveGameStateKey = "test"
+const highContrastKey = 'highContrast'
 export type StoredGameState = {
   guesses: string[]
   solution: string
@@ -21,9 +24,14 @@ export const saveGameStateToLocalStorage = (
 }
 
 
+// export const loadGameStateFromLocalStorage = (isLatestGame: boolean) => {
+//   const key = isLatestGame ? gameStateKey : archiveGameStateKey
+//   const state = localStorage.getItem(key)
+//   return state ? (JSON.parse(state) as StoredGameState) : null
+// }
 export const loadGameStateFromLocalStorage = (isLatestGame: boolean) => {
-  const key = isLatestGame ? gameStateKey : archiveGameStateKey
-  const state = localStorage.getItem(key)
+  const key = isLatestGame ? gameStateKey : null
+  const state = localStorage.getItem('key')
   return state ? (JSON.parse(state) as StoredGameState) : null
 }
 
