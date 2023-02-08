@@ -141,7 +141,6 @@ export const StatsModal = ({
           <hr className="mt-4 -mb-4 border-gray-500" />
           <MigrationIntro handleMigrateStatsButton={handleMigrateStatsButton} />
         </div>
-        <hr className="mt-4 -mb-4 border-gray-500" />
       )}
     
         <div className="mt-1 ml-1 text-left text-sm text-gray-900 dark:text-gray-100 sm:text-base">
