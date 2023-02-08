@@ -43,7 +43,7 @@ export const saveStatsToLocalStorage = (gameStats: GameStats) => {
 // }
 //MD not storage anithing
 export const loadStatsFromLocalStorage = () => {
-  const stats = null
+  //const stats = null
   return null
   //return stats ? (JSON.parse(stats) as GameStats) : null
 }
