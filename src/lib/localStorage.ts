@@ -13,7 +13,6 @@ export const saveGameStateToLocalStorage = (
   isLatestGame: boolean,
   gameState: StoredGameState
 ) => {
-  null
   const key = isLatestGame ? gameStateKey : archiveGameStateKey
   localStorage.setItem(key, JSON.stringify(gameState))
   localStorage.setItem(key, JSON.stringify(gameState))
