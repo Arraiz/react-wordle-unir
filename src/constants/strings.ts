@@ -18,7 +18,7 @@ export const NOT_CONTAINED_MESSAGE = (letter: string) =>
 export const ENTER_TEXT = 'Enter'
 export const DELETE_TEXT = 'Eliminar'
 export const STATISTICS_TITLE = 'Estadisticas'
-export const GUESS_DISTRIBUTION_TEXT = 'Adivina la distribucion'
+export const GUESS_DISTRIBUTION_TEXT = 'Distribucion de intentos'
 export const NEW_WORD_TEXT = 'Nueva palabra en:'
 export const SHARE_TEXT = 'Compartir'
 export const SHARE_FAILURE_TEXT =
