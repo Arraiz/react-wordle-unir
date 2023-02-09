@@ -46,14 +46,14 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
       </p>
 
       <div className="mb-1 mt-4 flex justify-center">
-        <Cell value="V" isCompleted={true} />
+        <Cell value="B" isCompleted={true} />
         <Cell value="A" isCompleted={true} />
-        <Cell value="G" isCompleted={true} />
-        <Cell isRevealing={true} isCompleted={true} value="S" status="absent" />
+        <Cell value="R" isCompleted={true} />
+        <Cell isRevealing={true} isCompleted={true} value="C" status="absent" />
         <Cell value="O" isCompleted={true} />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-       La letra S no es correcta.
+       La letra C no es correcta.
       </p>
     </BaseModal>
   )
