@@ -17,16 +17,16 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell
           isRevealing={true}
           isCompleted={true}
-          value="W"
+          value="C"
           status="correct"
         />
-        <Cell value="E" isCompleted={true} />
         <Cell value="A" isCompleted={true} />
+        <Cell value="B" isCompleted={true} />
         <Cell value="R" isCompleted={true} />
-        <Cell value="Y" isCompleted={true} />
+        <Cell value="A" isCompleted={true} />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-       La letra W es correcta y esta en su lugar.
+       La letra C es correcta y esta en su lugar.
       </p>
 
       <div className="mb-1 mt-4 flex justify-center">
@@ -35,25 +35,25 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell
           isRevealing={true}
           isCompleted={true}
-          value="L"
+          value="S"
           status="present"
         />
-        <Cell value="O" isCompleted={true} />
         <Cell value="T" isCompleted={true} />
+        <Cell value="A" isCompleted={true} />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-       La letra L es correcta pero no esta en su lugar.
+       La letra S es correcta pero no esta en su lugar.
       </p>
 
       <div className="mb-1 mt-4 flex justify-center">
         <Cell value="V" isCompleted={true} />
         <Cell value="A" isCompleted={true} />
         <Cell value="G" isCompleted={true} />
-        <Cell isRevealing={true} isCompleted={true} value="U" status="absent" />
-        <Cell value="E" isCompleted={true} />
+        <Cell isRevealing={true} isCompleted={true} value="S" status="absent" />
+        <Cell value="O" isCompleted={true} />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-       La letra U no es correcta.
+       La letra S no es correcta.
       </p>
     </BaseModal>
   )
