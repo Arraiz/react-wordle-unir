@@ -8,9 +8,9 @@ type Props = {
 
 export const InfoModal = ({ isOpen, handleClose }: Props) => {
   return (
-    <BaseModal title="How to play" isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal title="Como jugar" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-       Adivina la palabra en 6 intentos, cada intento te brindara informacion sobre que letras contienen la palabra en funciona de su color. No se admiten ni conjugaciones ni plurales
+       Adivina la palabra en 6 intentos, cada intento te brindara información sobre que letras contienen la palabra en funcion a su color. No se admiten ni conjugaciones ni plurales
       </p>
 
       <div className="mb-1 mt-4 flex justify-center">
