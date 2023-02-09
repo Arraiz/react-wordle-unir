@@ -11,6 +11,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
     <BaseModal title="Como jugar" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
        Adivina la palabra en 6 intentos, cada intento te brindara información sobre que letras contienen la palabra en funcion a su color. No se admiten ni conjugaciones ni plurales
+      <br>Mikel Diez (arraiz)</br>
       </p>
 
       <div className="mb-1 mt-4 flex justify-center">
@@ -20,37 +21,35 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
           value="W"
           status="correct"
         />
-        <Cell value="E" isCompleted={true} />
+        <Cell value="L" isCompleted={true} />
         <Cell value="A" isCompleted={true} />
-        <Cell value="R" isCompleted={true} />
-        <Cell value="Y" isCompleted={true} />
+        <Cell value="N" isCompleted={true} />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
        La letra W es correcta y esta en su lugar.
       </p>
 
       <div className="mb-1 mt-4 flex justify-center">
-        <Cell value="P" isCompleted={true} />
+        <Cell value="F" isCompleted={true} />
         <Cell value="I" isCompleted={true} />
         <Cell
           isRevealing={true}
           isCompleted={true}
-          value="L"
+          value="B"
           status="present"
         />
-        <Cell value="O" isCompleted={true} />
-        <Cell value="T" isCompleted={true} />
+        <Cell value="R" isCompleted={true} />
+        <Cell value="A" isCompleted={true} />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-       La letra L es correcta pero no esta en su lugar.
+       La letra B es correcta pero no esta en su lugar.
       </p>
 
       <div className="mb-1 mt-4 flex justify-center">
-        <Cell value="V" isCompleted={true} />
-        <Cell value="A" isCompleted={true} />
-        <Cell value="G" isCompleted={true} />
-        <Cell isRevealing={true} isCompleted={true} value="U" status="absent" />
-        <Cell value="E" isCompleted={true} />
+        <Cell value="O" isCompleted={true} />
+        <Cell value="N" isCompleted={true} />
+        <Cell value="D" isCompleted={true} />
+        <Cell isRevealing={true} isCompleted={true} value="A" status="absent" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
        La letra U no es correcta.
