@@ -83,7 +83,7 @@ export const StatsModal = ({
       <h4 className="text-lg font-medium leading-6 text-gray-900 dark:text-gray-100">
         {GUESS_DISTRIBUTION_TEXT}
       </h4>
-      <div>
+        {isGameWon === true && (<div>
         <hr className=" mt-4 -mb-4 rounded-none border-gray-500 " />
         <br />
         <h4 className=" text-s rounded-md bg-blue-500 font-medium leading-6 text-gray-900 shadow shadow-lg shadow-blue-500/50 dark:text-gray-100">
@@ -92,7 +92,7 @@ export const StatsModal = ({
           </em>
           : {description}
         </h4>
-      </div>
+      </div>)}
       <Histogram
         isLatestGame={isLatestGame}
         gameStats={gameStats}
