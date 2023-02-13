@@ -10,7 +10,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
   return (
     <BaseModal title="Como jugar" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-       Adivina la palabra en 6 intentos, cada intento te brindara información sobre que letras contienen la palabra en funcion a de su color. No se admiten ni conjugaciones ni plurales
+       Adivina la palabra en 6 intentos, cada intento te brindara información sobre que letras contienen la palabra en funcion a de su color. No se admiten ni conjugaciones ni plurales.Las palabras pueden ser siglas o estar en inglés
       </p>
 
       <div className="mb-1 mt-4 flex justify-center">
