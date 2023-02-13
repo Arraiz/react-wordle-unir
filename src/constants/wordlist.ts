@@ -23,4 +23,6 @@ export const WORDS = [
 'PCI',
 'virtual',
 'sensor',
+'Rufus',
+'ISO',
 ]

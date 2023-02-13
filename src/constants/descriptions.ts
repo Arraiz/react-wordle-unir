@@ -23,4 +23,6 @@ export const DESCRIPTIONS = [
 'un estándar para conectar componentes en una sistema informatico, como tarjetas de sonido, tarjetas gráficas, y adaptadores de red.',
 'se refiere a algo que existe en un entorno virtual, es decir, que está generado por software y no es un objeto real',
 'un dispositivo que mide o detecta ciertos valores, como la temperatura, la luz, el sonido, entre otros, y los convierte en una señal eléctrica o digital para su procesamiento y análisis.',
+'es una herramienta gratuita y de código abierto que permite crear unidades USB booteables a partir de imágenes de ISO de sistemas operativos y también puede utilizarse para formatear unidades USB',
+'Una ISO es un archivo que contiene una imagen exacta de un CD o DVD, incluyendo todos los archivos y carpetas en su estructura original. Esta imagen se utiliza comúnmente para distribuir sistemas operativos y software',
 ]
