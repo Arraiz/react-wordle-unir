@@ -319,6 +319,7 @@ function App() {
             solution={solution}
             guesses={guesses}
             gameStats={stats}
+            description={description}
             isLatestGame={isLatestGame}
             isGameLost={isGameLost}
             isGameWon={isGameWon}
