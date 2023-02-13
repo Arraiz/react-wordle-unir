@@ -21,8 +21,6 @@ export const DESCRIPTIONS = [
 'es una unidad básica de información. Puede ser un número, una palabra, una imagen, un sonido, entre otros. ',
 //paquete
 'es una unidad de información enviada en una red, compuesta de información de cabecera y carga útil. La cabecera incluye detalles de origen y destino, mientras que la carga útil contiene la información real. Los paquetes se transmiten y ensamblan en su destino para reconstruir la información original.',
-//banda
-'banda',
 //buffer
 'área temporal de almacenamiento en un sistema informático, utilizada para almacenar datos temporalmente mientras se procesan o se transmiten.',
 //byte
