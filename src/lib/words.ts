@@ -8,6 +8,7 @@ import {
 import { default as GraphemeSplitter } from 'grapheme-splitter'
 import queryString from 'query-string'
 
+import { DESCRIPTIONS } from '../constants/descriptions'
 import { ENABLE_ARCHIVED_GAMES } from '../constants/settings'
 import { NOT_CONTAINED_MESSAGE, WRONG_SPOT_MESSAGE } from '../constants/strings'
 import { VALID_GUESSES } from '../constants/validGuesses'
@@ -126,12 +127,22 @@ export const getWordOfDay = (index: number) => {
   return localeAwareUpperCase(WORDS[index % WORDS.length])
 }
 
+export const getDescription = (index: number) => {
+  if (index < 0) {
+    throw new Error('Invalid index')
+  }
+
+  return DESCRIPTIONS[index % DESCRIPTIONS.length]
+}
+
 export const getSolution = (gameDate: Date) => {
   const nextGameDate = getNextGameDate(gameDate)
   const index = getIndex(gameDate)
   const wordOfTheDay = getWordOfDay(index)
+  const description = getDescription(index)
   return {
     solution: wordOfTheDay,
+    description: description,
     solutionGameDate: gameDate,
     solutionIndex: index,
     tomorrow: nextGameDate.valueOf(),
@@ -176,5 +187,5 @@ export const getIsLatestGame = () => {
   return parsed === null || !('d' in parsed)
 }
 
-export const { solution, solutionGameDate, solutionIndex, tomorrow } =
+export const { solution, solutionGameDate, solutionIndex, tomorrow,description } =
   getSolution(getGameDate())

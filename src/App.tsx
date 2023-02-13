@@ -43,6 +43,7 @@ import {
 } from './lib/localStorage'
 import { addStatsForCompletedGame, loadStats } from './lib/stats'
 import {
+  description,
   findFirstUnusedReveal,
   getGameDate,
   getIsLatestGame,
