@@ -13,7 +13,6 @@ export const WORDS = [
 'buffer',
 'byte',
 'bit',
-'codigo',
 'antena',
 'telefono',
 'filtro',
