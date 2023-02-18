@@ -24,6 +24,8 @@ services:
       environment:
         - DEFAULT_EMAIL=mikeldiezgarcia@gmail.com
         - NGINX_PROXY_CONTAINER=nginx-proxy
+      depends_on:
+        - "nginx-proxy"
 
 
     wordle1:
@@ -38,6 +40,9 @@ services:
         - VIRTUAL_HOST=wordle.arraiz.me
         - LETSENCRYPT_HOST=wordle.arraiz.me
         - HTTPS_METHOD=redirect
+      depends_on:
+        - "nginx-proxy"
+        - "letsencrypt-proxy" 
 
 volumes:
   letsencrypt-certs:

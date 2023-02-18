@@ -24,13 +24,13 @@ add_custom_user_group() {
         $USER
 }
 
-# add_user_permission() {
-#     chown -R $USER:$GROUP \
-#         /usr/share/nginx \
-#         /var/cache/nginx \
-#         /var/log/nginx \
-#         /etc/nginx
-# }
+add_user_permission() {
+    chown -R $USER:$GROUP \
+        /usr/share/nginx \
+        /var/cache/nginx \
+        /var/log/nginx \
+        /etc/nginx
+}
 
 trace_on
     add_custom_user_group
