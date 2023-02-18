@@ -1,34 +1,5 @@
 version: '2'
 services:
-    nginx-proxy:
-        image: jwilder/nginx-proxy
-        restart: always
-        container_name: nginx_proxy
-        ports:
-            - "80:80"
-            - "443:443"
-        volumes:
-          - /var/run/docker.sock:/tmp/docker.sock:ro
-          - letsencrypt-certs:/etc/nginx/certs
-          - letsencrypt-vhost-d:/etc/nginx/vhost.d
-          - letsencrypt-html:/usr/share/nginx/html
-        labels:
-          - "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy"
-
-
-    letsencrypt-proxy:
-      image: jrcs/letsencrypt-nginx-proxy-companion
-      container_name: letsencrypt-proxy
-      volumes:
-        - /var/run/docker.sock:/var/run/docker.sock:ro
-        - letsencrypt-certs:/etc/nginx/certs
-        - letsencrypt-vhost-d:/etc/nginx/vhost.d
-      environment:
-        - DEFAULT_EMAIL=mikeldiezgarcia@gmail.com
-        - NGINX_PROXY_CONTAINER=nginx-proxy
-      depends_on:
-        - "nginx-proxy"
-
 
     wordle1:
       build:
@@ -40,11 +11,42 @@ services:
       container_name: wordle_teleco
       environment:
         - VIRTUAL_HOST=wordle.arraiz.me
-        - LETSENCRYPT_HOST=wordle.arraiz.me
+        - LETSENCRYPT_HOST=arraiz.me
         - HTTPS_METHOD=redirect
 
 
+    nginx-proxy:
+      image: jwilder/nginx-proxy
+      ports:
+        - 80:80
+        - 443:443
+      container_name: nginx-proxy
+      networks:
+        service_network:
+      volumes:
+        - /var/run/docker.sock:/tmp/docker.sock:ro
+        - nginx-certs:/etc/nginx/certs
+        - nginx-vhost:/etc/nginx/vhost.d
+        - nginx-html:/usr/share/nginx/html
+
+
+    nginx-proxy-letsencrypt:
+      image: jrcs/letsencrypt-nginx-proxy-companion
+      environment:
+        NGINX_PROXY_CONTAINER: "nginx-proxy"
+      networks:
+        service_network:
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock:ro
+        - nginx-certs:/etc/nginx/certs
+        - nginx-vhost:/etc/nginx/vhost.d
+        - nginx-html:/usr/share/nginx/html
+
+
+
+
+
 volumes:
-  letsencrypt-certs:
-  letsencrypt-vhost-d:
-  letsencrypt-html:
+  nginx-certs:
+  nginx-vhost:
+  nginx-html:
