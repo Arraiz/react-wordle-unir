@@ -12,8 +12,8 @@ services:
           - letsencrypt-certs:/etc/nginx/certs
           - letsencrypt-vhost-d:/etc/nginx/vhost.d
           - letsencrypt-html:/usr/share/nginx/html
-      labels:
-        - "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy"
+        labels:
+          - "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy"
 
 
     letsencrypt-proxy:
