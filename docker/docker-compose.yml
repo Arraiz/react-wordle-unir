@@ -8,23 +8,21 @@ services:
             - "80:80"
             - "443:443"
         volumes:
-          - conf:/etc/nginx/conf.d
-          - vhost:/etc/nginx/vhost.d
-          - dhparam:/etc/nginx/dhparam
-          - certs:/etc/nginx/certs:ro
           - /var/run/docker.sock:/tmp/docker.sock:ro
-          - /usr/share/nginx/html
-
+          - letsencrypt-certs:/etc/nginx/certs
+          - letsencrypt-vhost-d:/etc/nginx/vhost.d
+          - letsencrypt-html:/usr/share/nginx/html
+      labels:
+        - "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy"
 
 
     letsencrypt-proxy:
-      image: nginxproxy/acme-companion
+      image: jrcs/letsencrypt-nginx-proxy-companion
       container_name: letsencrypt-proxy
-      volumes_from:
-        - nginx-proxy
       volumes:
-        - certs:/etc/nginx/certs:rw
         - /var/run/docker.sock:/var/run/docker.sock:ro
+        - letsencrypt-certs:/etc/nginx/certs
+        - letsencrypt-vhost-d:/etc/nginx/vhost.d
       environment:
         - DEFAULT_EMAIL=mikeldiezgarcia@gmail.com
         - NGINX_PROXY_CONTAINER=nginx-proxy
@@ -44,12 +42,9 @@ services:
         - VIRTUAL_HOST=wordle.arraiz.me
         - LETSENCRYPT_HOST=wordle.arraiz.me
         - HTTPS_METHOD=redirect
-      depends_on:
-        - "nginx-proxy"
-        - "letsencrypt-proxy" 
+
 
 volumes:
-  conf:
-  vhost:
-  dhparam:
-  certs:
+  letsencrypt-certs:
+  letsencrypt-vhost-d:
+  letsencrypt-html:
