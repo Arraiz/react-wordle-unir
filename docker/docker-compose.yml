@@ -10,7 +10,7 @@ services:
       container_name: wordle_teleco
       environment:
         - VIRTUAL_HOST=wordle.arraiz.me
-        - LETSENCRYPT_HOST=arraiz.me
+        - LETSENCRYPT_HOST=wordle.arraiz.me
         - HTTPS_METHOD=redirect
 
 
