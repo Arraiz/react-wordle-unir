@@ -11,6 +11,7 @@ services:
           - /var/run/docker.sock:/tmp/docker.sock:ro
           - letsencrypt-certs:/etc/nginx/certs
           - letsencrypt-vhost-d:/etc/nginx/vhost.d
+          - letsencrypt-html:/usr/share/nginx/html
 
 
     letsencrypt-proxy:
@@ -21,6 +22,7 @@ services:
         - letsencrypt-certs:/etc/nginx/certs
         - letsencrypt-vhost-d:/etc/nginx/vhost.d
       environment:
+        - DEFAULT_EMAIL=mikeldiezgarcia@gmail.com
         - NGINX_PROXY_CONTAINER=nginx-proxy
 
 
@@ -36,7 +38,8 @@ services:
         - VIRTUAL_HOST=wordle.arraiz.me
         - LETSENCRYPT_HOST=wordle.arraiz.me
         - HTTPS_METHOD=redirect
-        
+
 volumes:
   letsencrypt-certs:
   letsencrypt-vhost-d:
+  letsencrypt-html:
