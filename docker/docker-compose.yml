@@ -7,11 +7,9 @@ services:
             - "80:80"
             - "443:443"
         volumes:
-          - "/etc/nginx/vhost.d"
-          - "/usr/share/nginx/html"
-          - "/var/run/docker.sock:/tmp/docker.sock:ro"
-          - "/etc/nginx/certs"
-
+          - /var/run/docker.sock:/tmp/docker.sock:ro
+          - certs:/etc/nginx/certs
+          - vhost-d:/etc/nginx/vhost.d
 
 
     letsencrypt-nginx-proxy-companion:
@@ -36,3 +34,6 @@ services:
         - VIRTUAL_HOST=wordle.arraiz.me
         - LETSENCRYPT_HOST=wordle.arraiz.me
         - HTTPS_METHOD=redirect
+volumes:
+  certs:
+  vhost-d:
