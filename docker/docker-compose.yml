@@ -1,0 +1,38 @@
+version: '2'
+services:
+    nginx-proxy:
+        image: jwilder/nginx-proxy
+        restart: always
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+          - "/etc/nginx/vhost.d"
+          - "/usr/share/nginx/html"
+          - "/var/run/docker.sock:/tmp/docker.sock:ro"
+          - "/etc/nginx/certs"
+
+
+
+    letsencrypt-nginx-proxy-companion:
+    container_name: letsencrypt-nginx-proxy-companion
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    restart: always
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+    volumes_from:
+      - "nginx-proxy"
+
+
+    wordle1:
+      build:
+        context: ../
+        dockerfile: docker/Dockerfile
+      image: teleco_prod:v0.1
+      expose:
+          - 3000
+      container_name: wordle_teleco
+      environment:
+        - VIRTUAL_HOST=wordle.arraiz.me
+        - LETSENCRYPT_HOST=wordle.arraiz.me
+        - HTTPS_METHOD=redirect
