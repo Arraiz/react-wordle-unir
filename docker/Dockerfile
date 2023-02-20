@@ -8,13 +8,20 @@ FROM node_modules AS prod_builder
 RUN npm run build
 
 
-FROM node_modules AS teleco_prod
+FROM node_modules AS teleco_dev
 COPY docker/build_system.sh .
 RUN ./build_system.sh && rm ./build_system.sh
 # port use by Nginx within docker network.
 EXPOSE 3000
 USER reactle
 
+FROM node_modules AS teleco_prod
+RUN npm run build
+COPY docker/build_system.sh .
+RUN ./build_system.sh && rm ./build_system.sh
+# port use by Nginx within docker network.
+EXPOSE 3000
+USER reactle
 
 
 ## Production image

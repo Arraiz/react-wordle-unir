@@ -1,6 +1,6 @@
 version: '2'
 services:
-    wordle1:
+    wordle-dev:
       build:
         context: ../
         dockerfile: docker/Dockerfile
