@@ -15,7 +15,7 @@ RUN ./build_system.sh && rm ./build_system.sh
 EXPOSE 3000
 USER reactle
 
-FROM node_modules AS teleco_prod
+FROM nginx:1.20.2-alpine AS teleco_prod
 RUN npm run build
 COPY docker/build_system.sh .
 RUN ./build_system.sh && rm ./build_system.sh
